@@ -1,0 +1,32 @@
+<%= form_with(model: dvd, local: true) do |form| %>
+  <% if dvd.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(dvd.errors.count, "error") %> prohibited this dvd from being saved:</h2>
+
+      <ul>
+      <% dvd.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :year %>
+    <%= form.number_field :year %>
+  </div>
+
+  <div class="field">
+    <%= form.label :genre %>
+    <%= form.text_field :genre %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @dvd.title %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @dvd.year %>
+</p>
+
+<p>
+  <strong>Genre:</strong>
+  <%= @dvd.genre %>
+</p>
+
+<%= link_to 'Edit', edit_dvd_path(@dvd) %> |
+<%= link_to 'Back', dvds_path %>
