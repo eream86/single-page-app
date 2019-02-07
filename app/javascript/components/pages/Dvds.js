@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import { Link } from "react-router-dom"
 class Dvds extends React.Component {
   constructor(props){
     super(props)
@@ -31,14 +32,15 @@ class Dvds extends React.Component {
           {this.state.dvds.map((dvd, index) => {
             return(
           <tr key={index}>
-            <td>Aliens</td>
-            <td>Horror</td>
-            <td>1991</td>
+            <td>{dvd.title}</td>
+            <td>{dvd.genre}</td>
+            <td>{dvd.year}</td>
           </tr>
         )
       })}
         </tbody>
       </table>
+      <Link to="new-dvd">Add New</Link>
     </div>
 
 

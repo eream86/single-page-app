@@ -1,5 +1,6 @@
 class DvdsController < ApplicationController
   before_action :set_dvd, only: [:show, :edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token
 
   # GET /dvds
   # GET /dvds.json
@@ -24,6 +25,7 @@ class DvdsController < ApplicationController
   # POST /dvds
   # POST /dvds.json
   def create
+
     @dvd = Dvd.new(dvd_params)
 
     respond_to do |format|
